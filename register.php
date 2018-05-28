@@ -20,7 +20,7 @@
 
         if (empty($correo) or empty($usuario) or empty($clave) or empty($clave2)){
 
-            $error .= '<i>Favor de rellenar todos los campos</i>';
+            $error .= '<i>Rellenar todos los campos vacios</i>';
         }else{
             try{
                 $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '796534');
@@ -40,25 +40,35 @@
             if ($clave != $clave2){
                 $error .= '<i> Las contraseñas no coinciden</i>';
             }
-            
-
 
         }
 
-
-
-        if ($error == ''){
-            $statement = $conexion->prepare('INSERT INTO login (id, correo, usuario, clave) VALUES (null, :correo, :usuario, :clave)');
-            $statement->execute(array(
-
-                ':correo' => $correo,
-                ':usuario' => $usuario,
-                ':clave' => $clave
-
-            ));
-
-            $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
+        try{
+            $conexion = new PDO('mysql:host=localhost;dbname=login_tuto', 'root', '796534');
+        }catch(PDOException $prueba_error){
+            echo "Error: " . $prueba_error->getMessage();
         }
+
+        if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+          
+
+                  if ($error == ''){
+                      $statement = $conexion->prepare('INSERT INTO login (id, correo, usuario, clave) VALUES (null, :correo, :usuario, :clave)');
+                      $statement->execute(array(
+
+                          ':correo' => $correo,
+                          ':usuario' => $usuario,
+                          ':clave' => $clave
+
+                      ));
+
+                      $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
+                  }
+
+        }else {
+          $error .= '<i> Correo no válido ex: keyquotest@me.com  </i>';
+        }
+
     }
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Register Magtimus</title>
+    <title>Registro/mis15</title>
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!--fuente 'Merriweather Sans'-->
@@ -17,7 +17,7 @@
         <div class="header">
             <div class="logo-title">
               <!--  <img src="image/logosu.png" alt="">
-                <h2>Magtimus</h2> -->
+                <h2></h2> -->
             </div>
             <!--menu login register-->
             <div class="menu">

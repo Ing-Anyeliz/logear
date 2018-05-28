@@ -5,7 +5,7 @@
     }
 
     $error = '';
-    
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $usuario = $_POST['usuario'];

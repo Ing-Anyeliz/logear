@@ -16,8 +16,8 @@
 <div class="container-form">
         <div class="header">
             <div class="logo-title">
-                <!-- <img src="image/logosu.png" alt=""> -->
-                <!--<h2>mis15</h2>-->
+               <img src="image/logosu.png" alt="">
+              <!--  <h2>mis15</h2>-->
             </div>
             <!--menu login register-->
             <div class="menu">
